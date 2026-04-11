@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://76t8chsophpk"]
+
+[ext_resource type="Script" uid="uid://bh00rgdvf40da" path="res://Scripts/quick_time_event_bar.gd" id="1_v6q7d"]
+[ext_resource type="Texture2D" uid="uid://cb03hnm8o0eax" path="res://Assets/temp stolen fuel bar.png" id="2_6lcp7"]
+[ext_resource type="Texture2D" uid="uid://dtxtosbgpv6je" path="res://Assets/icon.svg" id="3_cl4rg"]
+
+[node name="QuickTimeEventBar" type="Node2D" unique_id=455691825]
+script = ExtResource("1_v6q7d")
+
+[node name="QTEB_Background" type="Sprite2D" parent="." unique_id=1796851023]
+position = Vector2(561, 568)
+texture = ExtResource("2_6lcp7")
+
+[node name="QTEB_Pointer" type="Sprite2D" parent="." unique_id=1169807560]
+position = Vector2(344.00003, 568)
+scale = Vector2(0.22265626, 0.32031226)
+texture = ExtResource("3_cl4rg")
+
+[node name="start" type="Marker2D" parent="." unique_id=1854551713]
+position = Vector2(328, 556)
+
+[node name="end" type="Marker2D" parent="." unique_id=322103402]
+position = Vector2(808, 556)
+
+[node name="SafeStartPos" type="Marker2D" parent="." unique_id=544372524]
+position = Vector2(521, 556)
+
+[node name="SafeEndPos" type="Marker2D" parent="." unique_id=78088464]
+position = Vector2(612, 556)
+
+[node name="CritFail" type="Marker2D" parent="." unique_id=1586421974]
+position = Vector2(756, 556)
