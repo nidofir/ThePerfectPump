@@ -3,6 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://xkvxxgmesdxy" path="res://Scenes/player.tscn" id="1_cvbyu"]
 [ext_resource type="ArrayMesh" uid="uid://bqx4s25f3cao4" path="res://Assets/3Dassets/kiosk.obj" id="2_we11c"]
 [ext_resource type="ArrayMesh" uid="uid://dxfyurp4l04ss" path="res://Assets/3Dassets/bench.obj" id="3_urjuk"]
+[ext_resource type="ArrayMesh" uid="uid://b4kwi7d0ohyu2" path="res://Assets/3Dassets/Register.obj" id="4_7ckxp"]
+[ext_resource type="ArrayMesh" uid="uid://yqcvfc5far8y" path="res://Assets/3Dassets/fuelTank.obj" id="5_uokf8"]
+[ext_resource type="ArrayMesh" uid="uid://chx5bq0g5sow6" path="res://Assets/3Dassets/lever.obj" id="6_lmkc4"]
+[ext_resource type="ArrayMesh" uid="uid://drcicwdgipd6u" path="res://Assets/3Dassets/buttonPanel.obj" id="7_jtqq5"]
+[ext_resource type="ArrayMesh" uid="uid://d3d3re6h33owu" path="res://Assets/3Dassets/button.obj" id="8_te1fr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e377s"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -36,7 +41,7 @@ environment = SubResource("Environment_830vb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3885177, 0.43195593, 2.800964)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1985864553]
-transform = Transform3D(32.850574, 0, 0, 0, 1, 0, 0, 0, 32.850574, 0, 0, 0)
+transform = Transform3D(32.752884, 0, 0, 0, 0.9970262, 0, 0, 0, 32.752884, 0, 0, 0)
 use_collision = true
 
 [node name="Kiosk" type="MeshInstance3D" parent="." unique_id=319590349]
@@ -49,7 +54,7 @@ mesh = ExtResource("2_we11c")
 shape = SubResource("ConcavePolygonShape3D_urjuk")
 
 [node name="Bench" type="MeshInstance3D" parent="." unique_id=2037111132]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30614182, 0.5, 2.4694517)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.32937518, 0.5, 2.4694517)
 mesh = ExtResource("3_urjuk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bench" unique_id=1707547508]
@@ -57,3 +62,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09379851, 0.375, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bench/StaticBody3D" unique_id=168517343]
 shape = SubResource("BoxShape3D_jtjqg")
+
+[node name="Bench2" type="MeshInstance3D" parent="." unique_id=155937378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33005357, 0.56236076, 2.5177445)
+mesh = ExtResource("3_urjuk")
+
+[node name="Register" type="MeshInstance3D" parent="." unique_id=2097765167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05569899, 1.25879, 3.1496174)
+mesh = ExtResource("4_7ckxp")
+
+[node name="FuelTank" type="MeshInstance3D" parent="." unique_id=1559045453]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5683346, 0.5, 4.8262906)
+mesh = ExtResource("5_uokf8")
+
+[node name="FuelTank2" type="MeshInstance3D" parent="." unique_id=807472931]
+transform = Transform3D(1.1378462, 0, 0, 0, 0.5694659, 0, 0, 0, 1.1378462, -1.6277958, 0.5, 6.1210546)
+mesh = ExtResource("5_uokf8")
+
+[node name="Lever" type="MeshInstance3D" parent="." unique_id=1021665956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047777236, 1.3729643, 3.5491588)
+mesh = ExtResource("6_lmkc4")
+
+[node name="ButtonPanel" type="MeshInstance3D" parent="." unique_id=1113051659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22459307, 1.4829807, 1.0312631)
+mesh = ExtResource("7_jtqq5")
+
+[node name="Button" type="MeshInstance3D" parent="." unique_id=903884633]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, -0.22203918, 1.4414635, 1.1412702)
+mesh = ExtResource("8_te1fr")
