@@ -4,6 +4,10 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.02
+const BOB_FREQ=2.0
+const BOB_AMP=0.08
+var t_bob=0.0
+
 
 var gravity = 9.8
 
@@ -19,7 +23,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		player_camera.rotate_x(-event.relative.y * SENSITIVITY)
 		player_camera.rotation.x = clamp(player_camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
-		
+#	elif event is Input.get_vector("Quit"):
+#		get_tree().quit()
 		
 		
 
@@ -46,5 +51,7 @@ func _physics_process(delta: float):
 		velocity.x = 0.0
 		velocity.z = 0.0
 		
-
+	t_bob+= delta * velocity.length()*float(is_on_floor())
+	player_camera.transform
+	
 	move_and_slide()
