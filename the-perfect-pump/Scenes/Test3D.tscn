@@ -8,6 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://chx5bq0g5sow6" path="res://Assets/3Dassets/lever.obj" id="6_lmkc4"]
 [ext_resource type="ArrayMesh" uid="uid://drcicwdgipd6u" path="res://Assets/3Dassets/buttonPanel.obj" id="7_jtqq5"]
 [ext_resource type="ArrayMesh" uid="uid://d3d3re6h33owu" path="res://Assets/3Dassets/button.obj" id="8_te1fr"]
+[ext_resource type="PackedScene" uid="uid://dwwiwfw6ycyph" path="res://Scenes/car.tscn" id="9_uokf8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e377s"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -90,3 +91,6 @@ mesh = ExtResource("7_jtqq5")
 [node name="Button" type="MeshInstance3D" parent="." unique_id=903884633]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, -0.22203918, 1.4414635, 1.1412702)
 mesh = ExtResource("8_te1fr")
+
+[node name="Car" parent="." unique_id=2113207317 instance=ExtResource("9_uokf8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7288914, 0.52610254, 5.304426)

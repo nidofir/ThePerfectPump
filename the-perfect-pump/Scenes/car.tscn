@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://dwwiwfw6ycyph"]
+
+[sub_resource type="Animation" id="Animation_foosu"]
+resource_name = "Idle"
+length = 0.5000125
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("car base:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5000125),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.63478136, 0), Vector3(0, 0.7, 0), Vector3(0, 0.63478136, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wqo35"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("car base:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.63478136, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("wheels 2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("wheels 1:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_go66d"]
+resource_name = "moving"
+length = 0.5000125
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wheels 2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5000125),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 3.1415927), Vector3(0, 0, 6.2831855)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("wheels 1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5000125),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 3.1415927), Vector3(0, 0, 6.2831855)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_go66d"]
+_data = {
+&"Idle": SubResource("Animation_foosu"),
+&"RESET": SubResource("Animation_wqo35"),
+&"moving": SubResource("Animation_go66d")
+}
+
+[node name="Car" type="Node3D" unique_id=2113207317]
+
+[node name="car base" type="CSGBox3D" parent="." unique_id=361025037]
+transform = Transform3D(3.668838, 0, 0, 0, 1, 0, 0, 0, 1.6240697, 0, 0.63478136, 0)
+
+[node name="car top" type="CSGBox3D" parent="car base" unique_id=1521628240]
+transform = Transform3D(0.5942139, 0, 0, 0, 0.70203054, 0, 0, 0, 0.8597999, 0, 0.77649057, 0)
+
+[node name="wheels 1" type="CSGBox3D" parent="." unique_id=17544661]
+transform = Transform3D(0.6614408, 0, 0, 0, 0.64045215, 0, 0, 0, 2.0062082, 0.99289024, 0.29263663, 0)
+
+[node name="wheels 2" type="CSGBox3D" parent="." unique_id=129398154]
+transform = Transform3D(0.6614408, 0, 0, 0, 0.64045215, 0, 0, 0, 2.0062082, -0.9995992, 0.29263663, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2145502429]
+libraries/ = SubResource("AnimationLibrary_go66d")
