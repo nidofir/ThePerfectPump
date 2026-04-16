@@ -24,8 +24,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		player_camera.rotate_x(-event.relative.y * SENSITIVITY)
 		player_camera.rotation.x = clamp(player_camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event is :
+#func _unhandled_input(event: InputEvent) -> void:
+	#if event is :
 #	elif event is Input.get_vector("Quit"):
 #		get_tree().quit()
 		
