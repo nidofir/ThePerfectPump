@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dmwj4uuhehsnx" path="res://Scenes/PumpEvent.tscn" id="2_ctvxe"]
 [ext_resource type="PackedScene" uid="uid://dcvq0gbexjh3k" path="res://Scenes/Kiosk_Blockout.tscn" id="3_830vb"]
 [ext_resource type="PackedScene" uid="uid://dg8dr36b2isig" path="res://Scenes/NPC_Popup.tscn" id="4_qs7i0"]
+[ext_resource type="PackedScene" uid="uid://cafu4axmf7n3y" path="res://Scenes/audio_stream_player_2d.tscn" id="5_0tp7m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e377s"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -41,3 +42,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.48454988, 0)
 
 [node name="NpcPopup" parent="." unique_id=298308052 instance=ExtResource("4_qs7i0")]
 transform = Transform3D(-0.2590046, 0, -0.9658762, 0, 1, 0, 0.9658762, 0, -0.2590046, 2.104736, 0.024234414, 5.0737095)
+
+[node name="AudioStreamPlayer2D" parent="." unique_id=1413283721 instance=ExtResource("5_0tp7m")]
