@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://kqlq3uybr0d7"]
+
+[ext_resource type="Script" uid="uid://chmm21eifwjey" path="res://Scenes/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://bul0fmt658gbd" path="res://Assets/Sprites/perfectpumpcharacters.png" id="1_48xlc"]
+[ext_resource type="Texture2D" uid="uid://cf8d33r6hkkwg" path="res://Assets/Sprites/placeholder ThePerfectPumpLogo.png" id="2_1ehe0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ce3w2"]
+texture = ExtResource("1_48xlc")
+modulate_color = Color(0.47866166, 0.47866172, 0.47866166, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n45e2"]
+texture = ExtResource("2_1ehe0")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48xlc"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
+bg_color = Color(0.7079665, 0.7079665, 0.7079664, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce3w2"]
+bg_color = Color(0.5132329, 0.51323295, 0.51323277, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48xlc"]
+
+[node name="MainMenu" type="Control" unique_id=1785633635]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -5.0
+offset_right = -2.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1ehe0")
+
+[node name="background" type="Panel" parent="." unique_id=1363213424]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ce3w2")
+
+[node name="title" type="Panel" parent="." unique_id=1141775152]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -241.0
+offset_top = -23.0
+offset_right = 202.0
+offset_bottom = 265.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_n45e2")
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1422135397]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.25
+offset_top = 1.0
+offset_right = 114.25
+offset_bottom = 161.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 33
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1738830761]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/h_separation = 14
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_48xlc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ehe0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ce3w2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_48xlc")
+text = "Start"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1923734155]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/h_separation = 14
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_48xlc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ehe0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ce3w2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_48xlc")
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_exit_pressed"]
