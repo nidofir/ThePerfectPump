@@ -39,8 +39,8 @@ func _ready()-> void:
 
 
 func process(delta:float)->void:
-	#if current_state != State.PUMP:
-	#	return
+	if current_state != State.PUMP:
+		return
 	_move_indicator(delta)
 
 
