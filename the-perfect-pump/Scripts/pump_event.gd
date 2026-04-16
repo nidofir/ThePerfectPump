@@ -1,4 +1,5 @@
-extends Node2D
+extends CanvasLayer
+
 
 
 enum State {IDLE, WAITING,ENGAGE, PUMP, SUCCESS, FAIL}
@@ -18,18 +19,25 @@ var current_NPC_difficulty:float=0.0
 @export var NPC_difficulty:Array[int]=[60,20,10,7,2,1]
 @export var NPC_difficulty_zone_widths: Array[int]=[130,100,80,65,50,35]
 
+@onready var new_npc_timer: Timer = $NewNPCTimer
+@onready var pump_timer: Timer = $PumpTimer
+@onready var fuel_bar: Control = $FuelBar
+@onready var indicator: ColorRect = $FuelBar/Indicator
+@onready var points_label: Label = $UI/PointsLabel
+@onready var status_label: Label = $UI/StatusLabel
+@onready var target_zone: ColorRect = $FuelBar/TargetZone
 
 
 
-@onready var points_label: Label = $PumpEventGameLayer/UI/PointsLabel
-@onready var status_label: Label = $PumpEventGameLayer/UI/StatusLabel
-
-@onready var fuel_bar: Control = $PumpEventGameLayer/FuelBar
-@onready var indicator: ColorRect = $PumpEventGameLayer/FuelBar/Indicator
-@onready var target_zone: ColorRect = $PumpEventGameLayer/FuelBar/TargetZone
-
-@onready var new_npc_timer: Timer = $PumpEventGameLayer/NewNPCTimer
-@onready var pump_timer: Timer = $PumpEventGameLayer/PumpTimer
+#@onready var points_label: Label = $PumpEventGameLayer/UI/PointsLabel
+#@onready var status_label: Label = $PumpEventGameLayer/UI/StatusLabel
+#
+#@onready var fuel_bar: Control = $PumpEventGameLayer/FuelBar
+#@onready var indicator: ColorRect = $PumpEventGameLayer/FuelBar/Indicator
+#@onready var target_zone: ColorRect = $PumpEventGameLayer/FuelBar/TargetZone
+#
+#@onready var new_npc_timer: Timer = $PumpEventGameLayer/NewNPCTimer
+#@onready var pump_timer: Timer = $PumpEventGameLayer/PumpTimer
 
 func _ready()-> void:
 	fuel_bar.visible=false

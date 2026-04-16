@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://djysmynneeyi4"]
 
 [ext_resource type="PackedScene" uid="uid://xkvxxgmesdxy" path="res://Scenes/player.tscn" id="1_e377s"]
+[ext_resource type="PackedScene" uid="uid://dmwj4uuhehsnx" path="res://Scenes/PumpEvent.tscn" id="2_ctvxe"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e377s"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -30,3 +31,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5969812, 0)
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1985864553]
 transform = Transform3D(32.850574, 0, 0, 0, 1, 0, 0, 0, 32.850574, 0, 0, 0)
 use_collision = true
+
+[node name="PumpEvent" parent="." unique_id=482036581 instance=ExtResource("2_ctvxe")]
