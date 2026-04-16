@@ -1,5 +1,10 @@
 extends Node3D
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("toggle npc sprites"):
+		_on_Arrow_pressed()
+		print("new character")
+	
 @onready var car: Node3D = $Car
 
 
