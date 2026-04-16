@@ -1,9 +1,10 @@
 extends Node3D
 
 func _process(delta: float) -> void:
+	
 	if Input.is_action_just_pressed("toggle npc sprites"):
 		_on_Arrow_pressed()
-		print("new character")
+		#print("new character")
 	
 @onready var car: Node3D = $Car
 
@@ -28,6 +29,7 @@ var new_texture = [
 	load("res://Assets/Sprites/Character_14.png"),
 	load("res://Assets/Sprites/Character_15.png")
 	]
+
 var texture_index := 0
 
 func _on_Arrow_pressed() -> void:
@@ -35,4 +37,5 @@ func _on_Arrow_pressed() -> void:
 	texture_index += 1
 	if texture_index == new_texture.size():
 		texture_index = 0
-	print("new character")
+	#print("new character")
+	

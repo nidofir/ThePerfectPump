@@ -72,6 +72,7 @@ func _set_state(new_state:State)->void:
 			#fuel_bar.visible= true
 		State.WAITING:
 			status_label.text="waiting for customer"
+			emit_signal("ready")
 			#print("Currently Waiting")
 		State.ENGAGE:
 			status_label.text="THERES A CUSTOMER, PRESS AND HOLD SPACE TO START THE PUMP"
@@ -112,7 +113,12 @@ func _summon_customer()->void:
 	_set_state(State.ENGAGE)
 	new_npc_timer.wait_time=randf_range(1.5,3.5)
 	new_npc_timer.start()
+	_spawn_npc()
 	_set_state(State.WAITING)
+
+func _spawn_npc()->void:
+	print("instance npc")
+	#instance
 	
 func _start_pump()->void:
 	new_npc_timer.stop()
