@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bw4kwb6dwivth" path="res://Scripts/pump_event.gd" id="1_kn8te"]
 
 [node name="PumpEvent" type="CanvasLayer" unique_id=482036581]
+process_mode = 1
+process_priority = 1
 script = ExtResource("1_kn8te")
 
 [node name="Background" type="ColorRect" parent="." unique_id=2006151429]
@@ -11,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 color = Color(14.525561, 8.116523, 8.820813, 0)
 
 [node name="NewNPCTimer" type="Timer" parent="." unique_id=519330469]
@@ -32,6 +35,7 @@ offset_right = 200.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="Background" type="ColorRect" parent="FuelBar" unique_id=1088969912]
 layout_mode = 1
@@ -40,6 +44,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 color = Color(0.2, 0.2, 0.2, 1)
 
 [node name="TargetZone" type="ColorRect" parent="FuelBar" unique_id=1723906468]
@@ -55,6 +60,7 @@ offset_right = 40.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 color = Color(0.10980392, 0.6666667, 1, 1)
 
 [node name="Indicator" type="ColorRect" parent="FuelBar" unique_id=659668279]
@@ -70,6 +76,7 @@ offset_right = 10.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=430506701]
 
