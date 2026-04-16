@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://byfaehe76yyr7" path="res://Scripts/npc_popup.gd" id="1_pidjf"]
 [ext_resource type="PackedScene" uid="uid://dwwiwfw6ycyph" path="res://Scenes/car.tscn" id="2_40xuu"]
-[ext_resource type="Texture2D" uid="uid://pswdkemoinb1" path="res://Assets/Sprites/Character_15.png" id="3_pidjf"]
+[ext_resource type="Texture2D" uid="uid://dapeyfqvfr88n" path="res://Assets/Sprites/Character_2.png" id="3_pidjf"]
 
 [node name="NpcPopup" type="Node3D" unique_id=298308052]
 script = ExtResource("1_pidjf")
@@ -10,9 +10,6 @@ script = ExtResource("1_pidjf")
 [node name="Car" parent="." unique_id=2113207317 instance=ExtResource("2_40xuu")]
 
 [node name="NPC_sprite" type="Sprite3D" parent="." unique_id=1283025759]
-transform = Transform3D(1.7740233, 0, 0, 0, 1.7740233, 0, 0, 0, 1, -1.2415762, 1.3474171, 1.2871088)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2415762, 0.75232863, 1.2871088)
 pixel_size = 0.001
 texture = ExtResource("3_pidjf")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1106728571]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6255431, 0.4773245, 2.705476)
