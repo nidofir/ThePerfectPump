@@ -22,6 +22,9 @@ glow_enabled = true
 [node name="3dLevel" type="Node3D" unique_id=1527896083]
 
 [node name="PumpEvent" parent="." unique_id=482036581 instance=ExtResource("2_ctvxe")]
+indicator_speed = null
+NPC_difficulty = null
+NPC_difficulty_zone_widths = null
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=44685891]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -41,6 +44,6 @@ use_collision = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.48454988, 0)
 
 [node name="NpcPopup" parent="." unique_id=298308052 instance=ExtResource("4_qs7i0")]
-transform = Transform3D(0.044560865, 0, -0.9990067, 0, 1, 0, 0.9990067, 0, 0.044560865, 3.1380143, 0.024234414, 3.7677164)
+transform = Transform3D(-0.07423042, 0, -0.9972412, 0, 1, 0, 0.9972412, 0, -0.07423042, 2.2135012, 0.024234414, 4.1373005)
 
 [node name="AudioStreamPlayer2D" parent="." unique_id=1413283721 instance=ExtResource("5_0tp7m")]

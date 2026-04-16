@@ -7,17 +7,17 @@ enum State {IDLE, WAITING,ENGAGE, PUMP, SUCCESS, FAIL}
 var current_state: State= State.IDLE 
 
 var point_count: int = 0
-@export var indicator_speed: float = 300.0
+@export var indicator_speed: float = 500.0
 var indicator_direction: int= 1
 var current_NPC: String = ""
 var current_NPC_index:int=0
 var current_NPC_difficulty:float=0.0
 
-@export var NPC_names: Array[String]=[
-	"easiest","easy","mediocre","hard","harder","hardest"
-]
+#@export var NPC_names: Array[String]=[
+	#"easiest","easy","mediocre","hard","harder","hardest"
+#]
 @export var NPC_difficulty:Array[int]=[60,20,10,7,2,1]
-@export var NPC_difficulty_zone_widths: Array[int]=[130,100,80,65,50,35]
+@export var NPC_difficulty_zone_widths: Array[int]=[200,150,80,65,50,30]
 
 @onready var new_npc_timer: Timer = $NewNPCTimer
 @onready var pump_timer: Timer = $PumpTimer
@@ -62,23 +62,27 @@ func _reset_indicator()->void:
 	indicator.position.x=randf_range(0.0,max_x)
 	indicator_direction =1 if randf()>0.5 else -1
 
+#signal spawn_NPC_state 
+
 func _set_state(new_state:State)->void:
 	current_state = new_state
 	match new_state:
 		State.IDLE:
-			status_label.text="press SPACE to summon customers"
+			status_label.text= "press \"E\" to summon customers"
 			#print("Currently idle")
 			fuel_bar.visible= false
 			#fuel_bar.visible= true
 		State.WAITING:
 			status_label.text="waiting for customer"
-			emit_signal("ready")
+			#emit_signal("spawn_NPC_state")
+			#signal npc_update
+			#emit_signal("child_entered_tree")
 			#print("Currently Waiting")
 		State.ENGAGE:
-			status_label.text="THERES A CUSTOMER, PRESS AND HOLD SPACE TO START THE PUMP"
+			status_label.text="THERES A CUSTOMER, PRESS SPACE TO START THE PUMP"
 			#print("Currently Engaging")
 		State.PUMP:
-			status_label.text="STOP THE BAR IN THE GREEN ZONE"
+			status_label.text="STOP THE BAR IN THE BLUE ZONE"
 			fuel_bar.visible=true
 			target_zone.size.x= NPC_difficulty_zone_widths[current_NPC_index]
 			var zone_max_x:float = fuel_bar.size.x - target_zone.size.x
@@ -98,28 +102,45 @@ func _set_state(new_state:State)->void:
 
 
 
+
+
+
 func _input(event:InputEvent)->void:
 	if event.is_action_pressed("ui_accept"):
 		match current_state:
-			State.IDLE:
-				_summon_customer()
+			#State.IDLE:
+				#_summon_customer()
 			State.ENGAGE:
 				_start_pump()
 			State.PUMP:
 				_stop_pump()
 			
 
+	if event.is_action_pressed("toggle npc sprites"):
+		match current_state:
+			State.IDLE:
+				_summon_customer()
+			#State.ENGAGE:
+				#_start_pump()
+			#State.PUMP:
+				#_stop_pump()
+			
+
 func _summon_customer()->void:
 	_set_state(State.ENGAGE)
 	new_npc_timer.wait_time=randf_range(1.5,3.5)
 	new_npc_timer.start()
-	_spawn_npc()
+	#_spawn_npc()
 	_set_state(State.WAITING)
 
-func _spawn_npc()->void:
-	print("instance npc")
-	#instance
-	
+
+##	create_instance
+#
+#
+#func _clear_npc()->void:
+	#pass
+
+
 func _start_pump()->void:
 	new_npc_timer.stop()
 	#_pick_NPC()
@@ -148,12 +169,12 @@ func _stop_pump()->void:
 
 func _success()->void:
 	point_count+=1
-	var npc:String=current_NPC
+	#var npc:String=NPC_names[current_NPC_index]
 	points_label.text="Points %d" %point_count
-	status_label.text="blood served"
+	status_label.text="customer served"
 	indicator_speed=min(indicator_speed+20.0,600.0)
 	_set_state(State.SUCCESS)
-	status_label.text="you served %s"%[NPC_names]
+	status_label.text="Fuel pumped correctly"
 	await get_tree().create_timer(1.5).timeout
 	_set_state(State.IDLE)
 

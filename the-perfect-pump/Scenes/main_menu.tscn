@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://kqlq3uybr0d7"]
+[gd_scene format=3 uid="uid://d0l3ua3rfv1gr"]
 
-[ext_resource type="Script" uid="uid://chmm21eifwjey" path="res://Scenes/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://bul0fmt658gbd" path="res://Assets/Sprites/perfectpumpcharacters.png" id="1_48xlc"]
 [ext_resource type="Texture2D" uid="uid://cf8d33r6hkkwg" path="res://Assets/Sprites/placeholder ThePerfectPumpLogo.png" id="2_1ehe0"]
 

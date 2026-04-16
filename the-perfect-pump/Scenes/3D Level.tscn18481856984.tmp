@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dg8dr36b2isig" path="res://Scenes/NPC_Popup.tscn" id="4_qs7i0"]
 [ext_resource type="PackedScene" path="res://Scenes/audio_stream_player_2d.tscn" id="5_0tp7m"]
 
+[sub_resource type="GDScript" id="GDScript_0tp7m"]
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e377s"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -20,6 +22,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="3dLevel" type="Node3D" unique_id=1527896083]
+script = SubResource("GDScript_0tp7m")
 
 [node name="PumpEvent" parent="." unique_id=482036581 instance=ExtResource("2_ctvxe")]
 
@@ -41,6 +44,6 @@ use_collision = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.48454988, 0)
 
 [node name="NpcPopup" parent="." unique_id=298308052 instance=ExtResource("4_qs7i0")]
-transform = Transform3D(0.044560865, 0, -0.9990067, 0, 1, 0, 0.9990067, 0, 0.044560865, 3.1380143, 0.024234414, 3.7677164)
+transform = Transform3D(-0.07423042, 0, -0.9972412, 0, 1, 0, 0.9972412, 0, -0.07423042, 2.2135012, 0.024234414, 4.1373005)
 
 [node name="AudioStreamPlayer2D" parent="." unique_id=1413283721 instance=ExtResource("5_0tp7m")]

@@ -45,7 +45,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.51709193, -0.33005357, 0.56236
 mesh = ExtResource("3_urjuk")
 
 [node name="Register" type="MeshInstance3D" parent="." unique_id=2097765167]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05569899, 1.25879, 3.2841146)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05569899, 1.25879, 3.4428334)
 mesh = ExtResource("4_7ckxp")
 
 [node name="FuelTank" type="MeshInstance3D" parent="." unique_id=1559045453]
@@ -65,7 +65,7 @@ transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70
 mesh = ExtResource("8_te1fr")
 
 [node name="Lever" type="MeshInstance3D" parent="." unique_id=1112449749]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22018896, 1.4798926, 3.6808603)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22018896, 1.4798926, 3.839579)
 mesh = ExtResource("6_lmkc4")
 
 [node name="Door" type="MeshInstance3D" parent="." unique_id=379509914]
