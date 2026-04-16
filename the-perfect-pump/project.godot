@@ -15,6 +15,10 @@ run/main_scene="uid://76t8chsophpk"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+AudioStreamPlayer2d="*uid://cafu4axmf7n3y"
+
 [file_customization]
 
 folder_colors={
