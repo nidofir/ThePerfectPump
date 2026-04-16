@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bewbfxxcepdnj"]
 
 [ext_resource type="Script" uid="uid://dbg5kyc2shigp" path="res://Scripts/feature_test_2d.gd" id="1_ngsuv"]
-[ext_resource type="PackedScene" uid="uid://dsfsqycomeyq3" path="res://Scenes/hud.tscn" id="2_ltcmk"]
-[ext_resource type="PackedScene" uid="uid://76t8chsophpk" path="res://Scenes/QuickTimeEventBar.tscn" id="3_emvaw"]
+[ext_resource type="PackedScene" uid="uid://dsfsqycomeyq3" path="res://Scenes/Archive/hud.tscn" id="2_ltcmk"]
+[ext_resource type="PackedScene" uid="uid://76t8chsophpk" path="res://Scenes/Archive/QuickTimeEventBar.tscn" id="3_emvaw"]
 
 [node name="FeatureTest2D" type="Node" unique_id=1159514187]
 script = ExtResource("1_ngsuv")

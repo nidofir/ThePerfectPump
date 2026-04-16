@@ -7,7 +7,7 @@ enum State {IDLE, WAITING,ENGAGE, PUMP, SUCCESS, FAIL}
 var current_state: State= State.IDLE 
 
 var point_count: int = 0
-var indicator_speed: float = 300.0
+@export var indicator_speed: float = 300.0
 var indicator_direction: int= 1
 var current_NPC: String = ""
 var current_NPC_index:int=0
@@ -29,39 +29,33 @@ var current_NPC_difficulty:float=0.0
 
 
 
-#@onready var points_label: Label = $PumpEventGameLayer/UI/PointsLabel
-#@onready var status_label: Label = $PumpEventGameLayer/UI/StatusLabel
-#
-#@onready var fuel_bar: Control = $PumpEventGameLayer/FuelBar
-#@onready var indicator: ColorRect = $PumpEventGameLayer/FuelBar/Indicator
-#@onready var target_zone: ColorRect = $PumpEventGameLayer/FuelBar/TargetZone
-#
-#@onready var new_npc_timer: Timer = $PumpEventGameLayer/NewNPCTimer
-#@onready var pump_timer: Timer = $PumpEventGameLayer/PumpTimer
-
 func _ready()-> void:
 	fuel_bar.visible=false
+	#fuel_bar.visible= true
 	new_npc_timer.timeout.connect(_on_new_npc_timer_timeout)
 	pump_timer.timeout.connect(_on_pump_timer_timeout)
 	_set_state(State.IDLE)
 
 
-func process(delta:float)->void:
+func _process(delta:float)->void:
 	if current_state != State.PUMP:
 		return
-	_move_indicator(delta)
+	elif current_state == State.PUMP:
+		_move_indicator(delta)
+#		print("moving indicator")
 
 
 
 func _move_indicator(delta:float)->void:
 	var max_x: float= fuel_bar.size.x-indicator.size.x
-	indicator.position.x+= indicator_speed* indicator_direction*delta
+	indicator.position.x += indicator_speed * indicator_direction * delta
 	if indicator.position.x >= max_x:
-		indicator.position.x=max_x
+		indicator.position.x = max_x
 		indicator_direction = -1
-	elif indicator.position.x<=0.0:
-		indicator.position.x=0.0
-		indicator.direction=1
+	elif indicator.position.x <= 0.0:
+		indicator.position.x = 0.0
+		indicator_direction = 1
+	
 
 func _reset_indicator()->void:
 	var max_x: float = fuel_bar.size.x - indicator.size.x
@@ -73,11 +67,15 @@ func _set_state(new_state:State)->void:
 	match new_state:
 		State.IDLE:
 			status_label.text="press SPACE to summon customers"
+			#print("Currently idle")
 			fuel_bar.visible= false
+			#fuel_bar.visible= true
 		State.WAITING:
 			status_label.text="waiting for customer"
+			#print("Currently Waiting")
 		State.ENGAGE:
 			status_label.text="THERES A CUSTOMER, PRESS AND HOLD SPACE TO START THE PUMP"
+			#print("Currently Engaging")
 		State.PUMP:
 			status_label.text="STOP THE BAR IN THE GREEN ZONE"
 			fuel_bar.visible=true
@@ -87,12 +85,15 @@ func _set_state(new_state:State)->void:
 			#_reset_indicator()
 			pump_timer.wait_time= randf_range(3.0,6.0)
 			pump_timer.start()
+			#print("Currently pumping")
 		State.SUCCESS:
 			status_label.text="PERFECT PUMP"
 			fuel_bar.visible=false
+			#print("Currently success")
 		State.FAIL:
 			status_label.text="BAD PUMP"
 			fuel_bar.visible=false
+			#print("Currently fail")
 
 
 

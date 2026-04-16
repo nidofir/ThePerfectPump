@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dg8dr36b2isig"]
+
+[ext_resource type="Script" uid="uid://byfaehe76yyr7" path="res://Scripts/npc_popup.gd" id="1_pidjf"]
+[ext_resource type="PackedScene" uid="uid://dwwiwfw6ycyph" path="res://Scenes/car.tscn" id="2_40xuu"]
+[ext_resource type="Texture2D" uid="uid://dtxtosbgpv6je" path="res://Assets/icon.svg" id="3_y3k76"]
+
+[node name="NpcPopup" type="Node3D" unique_id=298308052]
+script = ExtResource("1_pidjf")
+
+[node name="Car" parent="." unique_id=2113207317 instance=ExtResource("2_40xuu")]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1283025759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.1760198)
+texture = ExtResource("3_y3k76")

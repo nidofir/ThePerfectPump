@@ -20,7 +20,6 @@ one_shot = true
 one_shot = true
 
 [node name="FuelBar" type="Control" parent="." unique_id=162537811]
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
