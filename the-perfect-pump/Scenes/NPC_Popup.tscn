@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://byfaehe76yyr7" path="res://Scripts/npc_popup.gd" id="1_pidjf"]
 [ext_resource type="PackedScene" uid="uid://dwwiwfw6ycyph" path="res://Scenes/car.tscn" id="2_40xuu"]
-[ext_resource type="Texture2D" uid="uid://dtxtosbgpv6je" path="res://Assets/icon.svg" id="3_y3k76"]
+[ext_resource type="Texture2D" uid="uid://bdffuik6w62c1" path="res://Assets/Sprites/Character_4.png" id="3_pidjf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_40xuu"]
 
 [node name="NpcPopup" type="Node3D" unique_id=298308052]
 script = ExtResource("1_pidjf")
@@ -10,5 +12,9 @@ script = ExtResource("1_pidjf")
 [node name="Car" parent="." unique_id=2113207317 instance=ExtResource("2_40xuu")]
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1283025759]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2415762, 0.651809, 1.2871088)
-texture = ExtResource("3_y3k76")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2415762, 0.75232863, 1.2871088)
+pixel_size = 0.001
+texture = ExtResource("3_pidjf")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=946800285]
+sprite_frames = SubResource("SpriteFrames_40xuu")
