@@ -46,6 +46,9 @@ visible = false
 transform = Transform3D(0.044560865, 0, -0.9990067, 0, 1, 0, 0.9990067, 0, 0.044560865, 3.1380143, 0.024234414, 3.7677164)
 
 [node name="AudioStreamPlayer2D" parent="." unique_id=1413283721 instance=ExtResource("5_0tp7m")]
+visible = false
+volume_db = -80.0
+autoplay = false
 
 [node name="Kiosk" parent="." unique_id=195576780 instance=ExtResource("6_4mnay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2597811, 0.041620493, 2.4946325)
