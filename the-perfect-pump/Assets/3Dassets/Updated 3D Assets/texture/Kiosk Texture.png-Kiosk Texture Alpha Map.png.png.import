@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coy5vrs5n1u3d"
-path.s3tc="res://.godot/imported/Kiosk Texture.png-c42e5b36b6cebd882d0e18e221b85756.s3tc.ctex"
+uid="uid://bebou0oubl05d"
+path.s3tc="res://.godot/imported/Kiosk Texture.png-Kiosk Texture Alpha Map.png.png-9f4fd2221a3b236c2e0055229b5ca751.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/Kiosk Texture.png"
-dest_files=["res://.godot/imported/Kiosk Texture.png-c42e5b36b6cebd882d0e18e221b85756.s3tc.ctex"]
+source_file="res://Assets/3Dassets/Updated 3D Assets/texture/Kiosk Texture.png-Kiosk Texture Alpha Map.png.png"
+dest_files=["res://.godot/imported/Kiosk Texture.png-Kiosk Texture Alpha Map.png.png-9f4fd2221a3b236c2e0055229b5ca751.s3tc.ctex"]
 
 [params]
 

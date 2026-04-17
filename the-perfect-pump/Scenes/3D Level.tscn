@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dcvq0gbexjh3k" path="res://Scenes/Kiosk_Blockout.tscn" id="3_830vb"]
 [ext_resource type="PackedScene" uid="uid://dg8dr36b2isig" path="res://Scenes/NPC_Popup.tscn" id="4_qs7i0"]
 [ext_resource type="PackedScene" uid="uid://cafu4axmf7n3y" path="res://Scenes/audio_stream_player_2d.tscn" id="5_0tp7m"]
+[ext_resource type="PackedScene" uid="uid://ba6bdamtvkcvl" path="res://Assets/3Dassets/Updated 3D Assets/Kiosk.gltf" id="6_4mnay"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e377s"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -38,9 +39,13 @@ transform = Transform3D(32.850574, 0, 0, 0, 1, 0, 0, 0, 32.850574, 0, -0.503355,
 use_collision = true
 
 [node name="Kiosk_Blockout" parent="." unique_id=1585354111 instance=ExtResource("3_830vb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.48454988, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012955666, -0.4655534, -0.0027780533)
+visible = false
 
 [node name="NpcPopup" parent="." unique_id=298308052 instance=ExtResource("4_qs7i0")]
 transform = Transform3D(0.044560865, 0, -0.9990067, 0, 1, 0, 0.9990067, 0, 0.044560865, 3.1380143, 0.024234414, 3.7677164)
 
 [node name="AudioStreamPlayer2D" parent="." unique_id=1413283721 instance=ExtResource("5_0tp7m")]
+
+[node name="Kiosk" parent="." unique_id=195576780 instance=ExtResource("6_4mnay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2597811, 0.041620493, 2.4946325)
